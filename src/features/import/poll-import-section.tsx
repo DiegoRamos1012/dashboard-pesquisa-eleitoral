@@ -143,7 +143,9 @@ export function PollImportSection({ onImported }: PollImportSectionProps) {
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <FileSpreadsheet className="h-4 w-4" />
               <span>
-                {file ? `Arquivo selecionado: ${file.name}` : "Nenhum arquivo selecionado"}
+                {file
+                  ? `Arquivo selecionado: ${file.name}`
+                  : "Nenhum arquivo selecionado"}
               </span>
             </div>
 
