@@ -1,6 +1,6 @@
 # Dashboard Pesquisa Eleitoral
 
-SPA em React + TypeScript + Vite para executar o fluxo de pesquisa eleitoral integrado ao backend existente.
+SPA em React + TypeScript + Vite para executar o fluxo de pesquisa eleitoral integrado a API Java no teste para a empresa Konatus.
 
 ## Visão Geral
 
