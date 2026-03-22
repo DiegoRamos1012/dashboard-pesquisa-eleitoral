@@ -1,5 +1,46 @@
 import type { MunicipalityGroup } from "@/api/contracts";
 
+const STATE_NAMES: Record<string, string> = {
+  AC: "Acre",
+  AL: "Alagoas",
+  AP: "Amapá",
+  AM: "Amazonas",
+  BA: "Bahia",
+  CE: "Ceará",
+  DF: "Distrito Federal",
+  ES: "Espírito Santo",
+  GO: "Goiás",
+  MA: "Maranhão",
+  MT: "Mato Grosso",
+  MS: "Mato Grosso do Sul",
+  MG: "Minas Gerais",
+  PA: "Pará",
+  PB: "Paraíba",
+  PR: "Paraná",
+  PE: "Pernambuco",
+  PI: "Piauí",
+  RJ: "Rio de Janeiro",
+  RN: "Rio Grande do Norte",
+  RS: "Rio Grande do Sul",
+  RO: "Rondônia",
+  RR: "Roraima",
+  SC: "Santa Catarina",
+  SP: "São Paulo",
+  SE: "Sergipe",
+  TO: "Tocantins",
+};
+
+export function getStateDisplayLabel(stateAcronym: string): string {
+  const normalized = stateAcronym.toUpperCase();
+  const fullName = STATE_NAMES[normalized];
+
+  if (!fullName) {
+    return normalized;
+  }
+
+  return `${fullName} (${normalized})`;
+}
+
 export function getMunicipalityGroupLabel(group: MunicipalityGroup): string {
   switch (group) {
     case "GROUP_1":

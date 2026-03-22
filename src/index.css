@@ -20,7 +20,7 @@
     --accent-foreground: 25 80% 24%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 34 20% 84%;
+    --border: 34 18% 82%;
     --input: 34 24% 83%;
     --ring: 174 74% 27%;
     --radius: 0.75rem;
@@ -35,6 +35,16 @@
     font-feature-settings:
       "liga" 1,
       "calt" 1;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  a {
+    transition: color 180ms ease;
   }
 
   h1,
@@ -61,6 +71,21 @@
       linear-gradient(180deg, #fdfbf6 0%, #f8f7f3 100%);
   }
 
+  .grid-soft {
+    background-image:
+      linear-gradient(rgba(13, 42, 45, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 42, 45, 0.03) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+  }
+
+  .panel-shell {
+    border: 1px solid hsl(var(--border) / 0.85);
+    box-shadow:
+      0 20px 40px -30px rgba(11, 31, 34, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
   .fade-rise {
     animation: fade-rise 480ms ease-out both;
   }
@@ -75,5 +100,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-rise {
+    animation: none;
   }
 }

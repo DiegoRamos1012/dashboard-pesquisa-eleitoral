@@ -19,9 +19,9 @@ function App() {
   const [pollData, setPollData] = useState<PollImportResponse | null>(null);
 
   return (
-    <div className="min-h-screen bg-page">
-      <main className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-8 md:px-8 md:py-10">
-        <header className="fade-rise rounded-2xl border border-border/70 bg-card/80 p-6 backdrop-blur md:p-8">
+    <div className="min-h-screen bg-page grid-soft">
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-7 px-4 py-8 md:px-8 md:py-10">
+        <header className="panel-shell fade-rise rounded-2xl bg-card/85 p-6 backdrop-blur-sm md:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             Pesquisa Eleitoral
           </p>
@@ -34,7 +34,7 @@ function App() {
           </p>
 
           {lastSyncResult ? (
-            <div className="mt-4 inline-flex items-center rounded-full border border-border bg-background/80 px-3 py-1 text-xs text-muted-foreground">
+            <div className="mt-4 inline-flex items-center rounded-full border border-border bg-background/90 px-3 py-1 text-xs text-muted-foreground shadow-[0_8px_20px_-16px_rgba(0,0,0,0.5)]">
               Última sincronização: {lastSyncResult.statesCreated} estados
               criados e {lastSyncResult.municipalitiesCreated} municípios
               criados.
@@ -55,10 +55,9 @@ function App() {
           <DashboardView pollData={pollData} />
         </Suspense>
 
-        <footer className="mt-2 rounded-xl text-center border border-border/70 bg-card/80 p-4 text-xs leading-relaxed text-muted-foreground">
-          Este site faz parte de um teste de projeto para processo
-          seletivo da empresa Konatus, desenvolvido por Diego Ramos dos Santos.{" "}
-          GitHub:{" "}
+        <footer className="panel-shell mt-2 rounded-xl text-center bg-card/85 p-4 text-xs leading-relaxed text-muted-foreground">
+          Este site faz parte de um teste de projeto para processo seletivo da
+          empresa Konatus, desenvolvido por Diego Ramos dos Santos. GitHub:{" "}
           <a
             href="https://github.com/DiegoRamos1012"
             target="_blank"
@@ -66,6 +65,15 @@ function App() {
             className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
           >
             Diego1012
+          </a>{" "}
+          | Projeto:{" "}
+          <a
+            href="https://github.com/DiegoRamos1012/dashboard-pesquisa-eleitoral"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            dashboard-pesquisa-eleitoral
           </a>
         </footer>
       </main>

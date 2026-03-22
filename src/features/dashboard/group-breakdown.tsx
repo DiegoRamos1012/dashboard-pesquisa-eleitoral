@@ -32,6 +32,7 @@ import {
 import {
   getMunicipalityGroupHint,
   getMunicipalityGroupLabel,
+  getStateDisplayLabel,
 } from "./display-labels";
 
 interface GroupBreakdownProps {
@@ -86,6 +87,7 @@ export function GroupBreakdown({ groups }: GroupBreakdownProps) {
               const groupHint = getMunicipalityGroupHint(
                 group.municipalityGroup,
               );
+              const stateLabel = getStateDisplayLabel(group.stateAcronym);
 
               return (
                 <AccordionItem
@@ -95,7 +97,7 @@ export function GroupBreakdown({ groups }: GroupBreakdownProps) {
                   <AccordionTrigger>
                     <div className="flex w-full flex-col gap-2 pr-3 text-left md:flex-row md:items-center md:justify-between">
                       <span className="font-semibold text-foreground">
-                        {groupLabel} - {group.stateAcronym}
+                        {groupLabel} - {stateLabel}
                         <span
                           className="ml-2 inline-flex align-middle text-muted-foreground"
                           title={groupHint}
@@ -126,7 +128,7 @@ export function GroupBreakdown({ groups }: GroupBreakdownProps) {
                           </strong>
                         </p>
                         <p>
-                          Estado: <strong>{group.stateAcronym}</strong>
+                          Estado: <strong>{stateLabel}</strong>
                         </p>
                       </div>
 

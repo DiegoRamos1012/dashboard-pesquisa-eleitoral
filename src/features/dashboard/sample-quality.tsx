@@ -8,6 +8,7 @@ import { getCoverageLevel, getCoveragePercentage } from "./coverage";
 import {
   getMunicipalityGroupHint,
   getMunicipalityGroupLabel,
+  getStateDisplayLabel,
 } from "./display-labels";
 
 interface SampleQualityProps {
@@ -34,7 +35,7 @@ export function SampleQuality({ groups }: SampleQualityProps) {
 
     return {
       key: `${group.stateAcronym}-${group.municipalityGroup}`,
-      label: `${getMunicipalityGroupLabel(group.municipalityGroup)} (${group.stateAcronym})`,
+      label: `${getMunicipalityGroupLabel(group.municipalityGroup)} (${getStateDisplayLabel(group.stateAcronym)})`,
       hint: getMunicipalityGroupHint(group.municipalityGroup),
       coverage,
       level: getCoverageLevel(coverage),
